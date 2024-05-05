@@ -114,7 +114,7 @@ Some users experience problems building the submodules on Windows (```cl.exe: Fi
 To run the optimizer, simply use
 
 ```shell
-python train.py -s <path to COLMAP or NeRF Synthetic dataset>
+python train.py -s <path to COLMAP or NeRF Synthetic dataset> -r 1 # Train on full resolution images
 ```
 
 <details>
@@ -378,6 +378,9 @@ https://github.com/graphdeco-inria/gaussian-splatting/assets/40643808/0940547f-1
 After extracting or installing the viewers, you may run the compiled ```SIBR_gaussianViewer_app[_config]``` app in ```<SIBR install dir>/bin```, e.g.: 
 ```shell
 ./<SIBR install dir>/bin/SIBR_gaussianViewer_app -m <path to trained model>
+```
+```shell	
+"C:\Users\Timothy\Downloads\viewers\bin\SIBR_gaussianViewer_app.exe" -m "C:\Users\Timothy\COLMAP\tim_house\images\point_cloud\iteration_30000\point_cloud.ply"
 ```
 
 It should suffice to provide the ```-m``` parameter pointing to a trained model directory. Alternatively, you can specify an override location for training input data using ```-s```. To use a specific resolution other than the auto-chosen one, specify ```--rendering-size <width> <height>```. Combine it with ```--force-aspect-ratio``` if you want the exact resolution and don't mind image distortion. 
